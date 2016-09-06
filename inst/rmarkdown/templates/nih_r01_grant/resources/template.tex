@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage[sort&compress]{natbib}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+
+% Use Helvetica font.
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% various pandoc reqs
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{graphicx}
+
+$if(tables)$
+\usepackage{longtable,booktabs}
+$endif$
+
+% Use 1/2-inch margins.
+\usepackage[margin=0.5in]{geometry}
+
+\usepackage{hyperref}
+
+% No page numbers.
+\pagestyle{empty}
+
+\newcommand{\instructions}[1]{}
+% Before submitting, comment out this line.
+%\renewcommand{\instructions}[1]{{\scriptsize \sc #1}}
+
+% The title has an 81-character maximum.
+\title{$grant_title$}
+
+\author{$author_name$\\
+$author_affiliation$}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+An NIH R01 proposal, submitted in response to \\
+{\em PAR-XX-XXX: INSERT TITLE OF PAR HERE}.
+\end{center}
+
+\vfill
+
+{\scriptsize Compiled on \today\ at \currenttime.}
+
+\clearpage
+
+\noindent
+$current_date$\\[2ex]
+
+\noindent
+Dear NIH:\\[1ex]
+
+I am submitting a grant proposal entitled ``$grant_title$''
+
+\begin{itemize}
+\item Please assign this application to the National Institute for
+  FIXME
+\item Please assign this application to the following study section:
+  FIXME
+\end{itemize}
+I have discussed this application with INSERT NAME OF PROGRAM OFFICER
+at INSERT NAME OF INSTITUTE.  They recommended the above two
+assignments.
+
+Thank you very much.\\[1ex]
+
+\noindent
+Sincerely,\\[2ex]
+
+\noindent
+$author_name$\\
+$author_affiliation$
+
+$body$
+
+\end{document}
