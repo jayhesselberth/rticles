@@ -1,0 +1,182 @@
+---
+title: Template for preparing your research report submission to BioMed Central using RMarkdown
+
+author:
+  - name: Alice Anonymous
+    affs: a
+    notes: n1
+    email: 'alice@werds.com'
+    inits: A.A.
+    fnm: Alice
+    snm: Anonymous
+  - name: Bob Security
+    affs: a,b
+    email: 'bob@werds.com'
+    inits: B.S.
+    fnm: Bob
+    snm: Security
+address:
+  - id: a
+    orgname: Some Institute of Technology, Department
+    street: Street
+    postcode: 00000
+    city: Boondocks
+    country: USA
+  - id: b
+    orgname: Another Institute of Technology, Department
+    street: Street 
+    postcode: 00000
+    city: Everywhere
+    country: USA
+notes:
+- id: n1
+  text: 'Corresponding author'
+
+# One of Research, Method, Software, Open letter, Comment, Review, Correspondence, Opinion
+dochead: Opinion
+
+abstract: |
+  Please provide an abstract of no more than 250 words in a single paragraph. Abstracts should explain to the general reader the major contributions of the article. References in the abstract must be cited in full within the abstract itself and cited in the text.
+
+acknowledgements: |
+  Please include your acknowledgments here, set in a single paragraph. Please do not include any acknowledgments in the Supporting Information, or anywhere else in the manuscript.
+
+keywords:
+  - one
+  - two
+  - optional
+
+bibliography: bmc_article.bib
+csl: biomed-central.csl
+
+output: rticles::bmc_article
+---
+
+# Content {.unnumbered}
+
+Text and results for this section, as per the individual journal's instructions for authors. @koon, @oreg, @khar
+
+# Section title {.unnumbered}
+
+Text for this section \ldots
+
+## Sub-heading for section {.unnumbered}
+
+Text for this sub-heading \ldots
+
+### Sub-sub heading for section {.unnumbered}
+
+Text for this sub-sub-heading \ldots
+
+In this section we examine the growth rate of the mean of $Z_0$, $Z_1$ and
+$Z_2$. In addition, we examine a common modeling assumption and note the 
+importance of considering the tails of the extinction time $T_x$ in studies of
+escape dynamics. We will first consider the expected resistant population at
+$vT_x$ for some $v>0$, (and temporarily assume $\alpha=0$)
+
+$$
+E \bigl[Z_1(vT_x) \bigr]= E
+\biggl[\mu T_x\int_0^{v\wedge
+1}Z_0(uT_x)
+\exp \bigl(\lambda_1T_x(v-u) \bigr)\,du \biggr].
+$$
+
+If we assume that sensitive cells follow a deterministic decay 
+$Z_0(t)=xe^{\lambda_0 t}$ and approximate their extinction time as 
+$T_x\approx-\frac{1}{\lambda_0}\log x$, then we can heuristically estimate the
+expected value as
+
+<!-- 
+$$
+\begin{eqnarray}\label{eqexpmuts}
+E\bigl[Z_1(vT_x)\bigr] &=& \frac{\mu}{r}\log x
+\int_0^{v\wedge1}x^{1-u}x^{({\lambda_1}/{r})(v-u)}\,du
+\nonumber\\
+&=& \frac{\mu}{r}x^{1-{\lambda_1}/{\lambda_0}v}\log x\int_0^{v\wedge
+1}x^{-u(1+{\lambda_1}/{r})}\,du
+\nonumber\\
+&=& \frac{\mu}{\lambda_1-\lambda_0}x^{1+{\lambda_1}/{r}v} \biggl(1-\exp \biggl[-(v\wedge1) \biggl(1+
+\frac{\lambda_1}{r}\biggr)\log x \biggr] \biggr).
+\end{eqnarray}
+$$
+-->
+
+Thus we observe that this expected value is finite for all $v>0$ (also see @{koon,khar,zvai,xjon,marg}).
+
+\begin{backmatter}
+
+# Competing interests {.unnumbered}
+
+The authors declare that they have no competing interests.
+
+# Author's contributions {.unnumbered}
+
+Text for this section \ldots
+
+# Acknowledgements {.unnumbered} 
+
+Text for this section \ldots
+
+<!-- if your bibliography is in bibtex format, use those commands:
+\bibliographystyle{bmc-mathphys} % Style BST file (bmc-mathphys, vancouver, spbasic).
+\bibliography{bmc_article}      % Bibliography file (usually '*.bib' )
+% for author-year bibliography (bmc-mathphys or spbasic)
+% a) write to bib file (bmc-mathphys only)
+% @settings{label, options="nameyear"}
+% b) uncomment next line
+%\nocite{label}
+-->
+
+<!-- or include bibliography directly: -->
+
+<!--
+\begin{thebibliography}
+\bibitem{b1}
+\end{thebibliography}
+-->
+
+<!-- Do not use \listoffigures as most will included as separate files -->
+
+# Figures {.unnumbered}
+
+<!-- 
+\section*{Figures}
+  \begin{figure}[h!]
+  \caption{\csentence{Sample figure title.}
+      A short description of the figure content
+      should go here.}
+      \end{figure}
+
+\begin{figure}[h!]
+  \caption{\csentence{Sample figure title.}
+      Figure legend text.}
+      \end{figure}
+-->
+
+# Tables {.unnumbered}
+
+<!-- Use of \listoftables is discouraged.
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+   : Sample table title. This is where the description of the table should go.
+   
+-->
+
+# Additional Files {.unnumbered}
+
+## Additional file 1 --- Sample additional file title {.unnumbered}
+
+Additional file descriptions text (including details of how to
+view the file, if it is in a non-standard format or the file extension).  This might
+refer to a multi-page table or a figure.
+
+## Additional file 2 --- Sample additional file title {.unnumbered}
+
+Additional file descriptions text.
+
+\end{backmatter}

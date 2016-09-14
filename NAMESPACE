@@ -3,6 +3,7 @@
 export(acm_article)
 export(acs_article)
 export(bioinformatics_article)
+export(bmc_article)
 export(ctex)
 export(ctex_template)
 export(elsevier_article)
